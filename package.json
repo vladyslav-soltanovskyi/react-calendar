@@ -1,0 +1,36 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server -d --devtool eval-source-maps --open",
+    "build": "webpack -p"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.3.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "moment": "2.24.0",
+    "core-js": "^3.5.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

@@ -1,0 +1,11 @@
+.calendar {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+
+    &__time-slot {
+        height: 59px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+}
