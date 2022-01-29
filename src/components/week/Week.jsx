@@ -1,7 +1,7 @@
-import React from "react";
-import Day from "../day/Day";
+import React from 'react';
+import Day from '../day/Day';
 
-import "./week.scss";
+import './week.scss';
 
 const Week = ({ weekDates, events }) => {
   return (

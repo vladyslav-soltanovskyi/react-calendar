@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Header from "./components/header/Header.jsx";
-import Calendar from "./components/calendar/Calendar.jsx";
+import React, { Component } from 'react';
+import Header from './components/header/Header.jsx';
+import Calendar from './components/calendar/Calendar.jsx';
 
-import { getWeekStartDate, generateWeekRange } from "../src/utils/dateUtils.js";
+import { getWeekStartDate, generateWeekRange } from '../src/utils/dateUtils.js';
 
-import "./common.scss";
+import './common.scss';
 
 class App extends Component {
   state = {

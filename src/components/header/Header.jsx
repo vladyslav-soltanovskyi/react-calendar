@@ -1,8 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { months } from "../../utils/dateUtils.js";
-
-import "./header.scss";
+import './header.scss';
 
 const Header = () => {
   return (

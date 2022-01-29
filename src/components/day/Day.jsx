@@ -1,7 +1,7 @@
-import React from "react";
-import Hour from "../hour/Hour";
+import React from 'react';
+import Hour from '../hour/Hour';
 
-import "./day.scss";
+import './day.scss';
 
 const Day = ({ dataDay, dayEvents }) => {
   const hours = Array(24)

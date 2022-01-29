@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./modal.scss";
+import './modal.scss';
 
 class Modal extends Component {
   render() {
