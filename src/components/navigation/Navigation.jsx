@@ -7,7 +7,6 @@ const Navigation = ({ weekDates }) => {
     <header className="calendar__header">
       {weekDates.map((dayDate) => {
         const uniqKey = `${dayDate.getFullYear()}-${dayDate.getMonth()}-${dayDate.getDate()}`;
-        console.log(uniqKey)
         return (
           <div
             className="calendar__day-label day-label"
