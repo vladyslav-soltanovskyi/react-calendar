@@ -53,15 +53,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  opacity: 0.6;
 
   &__day-name {
     font-size: 14px;
     text-transform: uppercase;
+    color: #70757a;
+    
+    &_today {
+      color: #1a73e8;
+    }
   }
 
   &__day-number {
     font-size: 22px;
+    border-radius: 100%;
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3c4043;
+
+    &_past {
+      color: #70757a;
+    }
+    
+    &_today {
+      background-color: #1a73e8;
+      color: #fff;
+    }
   }
 }
 
