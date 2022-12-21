@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header weekStartDate={weekStartDate} setWeekStartDate={setWeekStartDate} />
       <Calendar weekDates={weekDates} />
     </>
   );
