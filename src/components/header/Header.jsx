@@ -1,4 +1,5 @@
 import React from 'react';
+import { useModal } from '../../hooks';
 import { getDisplayedMonth } from '../../utils/dateUtils';
 
 import './header.scss';
@@ -11,6 +12,8 @@ const changeDayForDate = (date, days) => {
 }
 
 const Header = ({ weekStartDate, setWeekStartDate }) => {
+  const { openModal } = useModal();
+  
   const changeToPrevWeek = () => setWeekStartDate(changeDayForDate(weekStartDate, -7));
 
   const changeToNextWeek = () => setWeekStartDate(changeDayForDate(weekStartDate, 7));
@@ -19,7 +22,7 @@ const Header = ({ weekStartDate, setWeekStartDate }) => {
 
   return (
     <header className="header">
-      <button className="button create-event-btn">
+      <button className="button create-event-btn" onClick={openModal}>
         <i className="fas fa-plus create-event-btn__icon"></i>Create
       </button>
       <div className="navigation">
