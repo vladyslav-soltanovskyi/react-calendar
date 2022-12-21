@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-
+import propTypes from "prop-types";
 import Navigation from './../navigation/Navigation';
 import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
-import eventsData from '../../gateway/events';
 
 import './calendar.scss';
 
 const Calendar = ({ weekDates }) => {
-  const [events, setEvents] = useState(eventsData);
+  const [events, setEvents] = useState([]);
 
   return (
     <section className="calendar">
@@ -21,6 +20,10 @@ const Calendar = ({ weekDates }) => {
       </div>
     </section>
   );
+}
+
+Navigation.propTypes = {
+  weekDates: propTypes.arrayOf(propTypes.instanceOf(Date))
 }
 
 export default Calendar;

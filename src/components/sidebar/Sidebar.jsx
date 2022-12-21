@@ -2,7 +2,7 @@ import React from 'react';
 
 import './sidebar.scss';
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   const hours = Array(24)
     .fill()
     .map((val, index) => index);

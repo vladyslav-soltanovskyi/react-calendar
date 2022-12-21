@@ -66,3 +66,10 @@ export const getDisplayedMonth = (date) => {
     ? `${months[startMonth]} - ${months[endMonth]} ${startYear}`
     : `${months[startMonth]} ${startYear} - ${months[endMonth]} ${endYear}`;
 };
+
+export const changeDayForDate = (date, days) => {
+  const result = new Date(date);
+  return new Date(
+    result.setDate(result.getDate() + days)
+  );
+}

@@ -1,15 +1,9 @@
 import React from 'react';
+import propTypes from "prop-types";
 import { useModal } from '../../hooks';
-import { getDisplayedMonth } from '../../utils/dateUtils';
+import { getDisplayedMonth, changeDayForDate } from '../../utils/dateUtils';
 
 import './header.scss';
-
-const changeDayForDate = (date, days) => {
-  const result = new Date(date);
-  return new Date(
-    result.setDate(result.getDate() + days)
-  );
-}
 
 const Header = ({ weekStartDate, setWeekStartDate }) => {
   const { openModal } = useModal();
@@ -48,5 +42,10 @@ const Header = ({ weekStartDate, setWeekStartDate }) => {
     </header>
   );
 };
+
+Header.propTypes = {
+  weekDates: propTypes.instanceOf(Date),
+  setWeekStartDate: propTypes.func
+}
 
 export default Header;

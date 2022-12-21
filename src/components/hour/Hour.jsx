@@ -1,5 +1,5 @@
 import React from 'react';
-
+import propTypes from "prop-types";
 import Event from '../event/Event';
 import { formatMins } from '../../utils/dateUtils.js';
 
@@ -29,5 +29,18 @@ const Hour = ({ dataHour, hourEvents }) => {
     </div>
   );
 };
+
+Hour.propTypes = {
+  dataHour: propTypes.number,
+  hourEvents: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number,
+      title: propTypes.string,
+      description: propTypes.string,
+      start: propTypes.instanceOf(Date),
+      end: propTypes.instanceOf(Date)
+    })
+  )
+}
 
 export default Hour;
