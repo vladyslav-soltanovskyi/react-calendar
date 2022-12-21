@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Event from '../event/Event';
-import { formatMins } from '../../../src/utils/dateUtils.js';
+import { formatMins } from '../../utils/dateUtils.js';
 
 const Hour = ({ dataHour, hourEvents }) => {
   return (
