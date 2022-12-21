@@ -1,32 +1,40 @@
-const events = [
-  {
-    id: 1,
-    title: 'Go to the gym',
-    description: 'some text here',
-    dateFrom: new Date(2022, 11, 15, 10, 15),
-    dateTo: new Date(2022, 11, 15, 15, 0),
-  },
-  {
-    id: 2,
-    title: 'Go to the school',
-    description: 'hello, 2 am',
-    dateFrom: new Date(2022, 11, 16, 10, 15),
-    dateTo: new Date(2022, 11, 16, 11, 0),
-  },
-  {
-    id: 3,
-    title: 'Lunch',
-    description: '',
-    dateFrom: new Date(2022, 11, 17, 10, 30),
-    dateTo: new Date(2022, 11, 17, 11, 30),
-  },
-  {
-    id: 4,
-    title: 'Meet friend',
-    description: 'at the cafe',
-    dateFrom: new Date(2022, 11, 25, 10, 30),
-    dateTo: new Date(2022, 11, 25, 11, 0),
-  },
-];
+const baseUrl = 'https://61d8e2cfe6744d0017ba8cdc.mockapi.io/events';
 
-export default events;
+const request = async (url, { method = 'GET', body = {} } = {}) => {
+  try {
+    const headers = {
+      'Content-Type': 'application/json;charset=utf-8'
+    };
+  
+    const res = (method === 'GET')
+      ? await fetch(`${baseUrl}${url}`)
+      : await fetch(`${baseUrl}${url}`, { 
+        method, 
+        body: JSON.stringify(body),
+        headers
+      });
+
+    if (!res.ok) {
+      throw new Error('Server Error');
+    }
+
+    return (await res.json());
+  } catch (err) {
+    alert('Internal Server Error');
+  }
+}
+
+const getEvents = () => request('');
+
+const createEvent = (eventData) => request('', { method: "POST", body: eventData });
+
+const deleteEvent = (eventId) => request(`/${eventId}`, { method: "DELETE" });
+
+const updateEvent = (eventId, eventData) => request(`/${eventId}`, { method: "PUT", body: eventData });
+
+export default {
+  getEvents,
+  createEvent,
+  deleteEvent,
+  updateEvent
+}
