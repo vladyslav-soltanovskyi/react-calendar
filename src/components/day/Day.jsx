@@ -14,7 +14,7 @@ const Day = ({ dataDay, dayEvents }) => {
       {hours.map((hour) => {
         //getting all events from the day we will render
         const hourEvents = dayEvents.filter(
-          (event) => event.start.getHours() === hour
+          (event) => new Date(event.start).getHours() === hour
         );
 
         return (
@@ -30,11 +30,11 @@ Day.propTypes = {
   dataDay: propTypes.number,
   dayEvents: propTypes.arrayOf(
     propTypes.shape({
-      id: propTypes.number,
+      id: propTypes.string,
       title: propTypes.string,
       description: propTypes.string,
-      start: propTypes.instanceOf(Date),
-      end: propTypes.instanceOf(Date)
+      start: propTypes.string,
+      end: propTypes.string
     })
   )
 }

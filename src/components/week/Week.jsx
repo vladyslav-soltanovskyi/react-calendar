@@ -14,7 +14,7 @@ const Week = ({ weekDates, events }) => {
 
         //getting all events from the day we will render
         const dayEvents = events.filter(
-          (event) => event.start > dayStart && event.end < dayEnd
+          (event) => new Date(event.start) > dayStart && new Date(event.end) < dayEnd
         );
 
         return (
@@ -33,11 +33,11 @@ Week.propTypes = {
   weekDates: propTypes.arrayOf(propTypes.instanceOf(Date)),
   events: propTypes.arrayOf(
     propTypes.shape({
-      id: propTypes.number,
+      id: propTypes.string,
       title: propTypes.string,
       description: propTypes.string,
-      start: propTypes.instanceOf(Date),
-      end: propTypes.instanceOf(Date)
+      start: propTypes.string,
+      end: propTypes.string
     })
   )
 }
