@@ -1,5 +1,5 @@
 .event {
-  position: absolute;
+  position: relative;
   width: 80%;
   background-color: cornflowerblue;
   z-index: 1;
@@ -23,4 +23,9 @@
 .delete-event-btn {
   cursor: pointer;
   border: none;
+  outline: none;
+  background: inherit;
+  &__text {
+    margin-left: 15px;
+  }
 }

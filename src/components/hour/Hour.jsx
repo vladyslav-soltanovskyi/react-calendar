@@ -25,6 +25,7 @@ const Hour = ({ dataHour, hourEvents }) => {
             marginTop={startDate.getMinutes()}
             time={`${eventStart} - ${eventEnd}`}
             title={title}
+            id={id}
           />
         );
       })}
