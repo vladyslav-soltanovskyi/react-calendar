@@ -8,12 +8,12 @@ The tech stack is:
 
 1. HTML5
 2. CSS3
-3. JS 
-4. Http server 
+3. JS
+4. mockApi
+5. fetch
 5. Sass (Scss) 
 6. BEM methodology
 7. React, hooks
 8. props-types
-9. mockApi
 
 Author Vladyslav Soltanovskyi
