@@ -4,12 +4,15 @@ import './index.scss';
 import App from './App';
 import { ModalProvider } from './providers/ModalProvider';
 import { EventsStoreProvider } from './providers/EventsStore';
+import { PopupProvider } from './providers/PopupProvider';
 
 const rootElement = document.querySelector('#root');
 
 ReactDOM.render(
   <EventsStoreProvider>
     <ModalProvider>
-      <App />
+      <PopupProvider>
+        <App />
+      </PopupProvider>
     </ModalProvider>
   </EventsStoreProvider>, rootElement);

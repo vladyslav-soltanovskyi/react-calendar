@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import propTypes from "prop-types";
-import { useClickOutside, useEventsStore } from '../../hooks';
+import { useClickOutside, useEventsStore, usePopup } from '../../hooks';
 import api from "../../gateway/events";
 
-const Popup = ({ x, y, closePopup, eventId }) => {
+const Popup = ({ x, y, eventId }) => {
   const popupRef = useRef(null);
   const { dispatch, deleteEvent } = useEventsStore();
+  const { closePopup } = usePopup();
+
   const popupStyle = {
     left: `${x}px`,
     top: `${y}px`
@@ -22,18 +24,20 @@ const Popup = ({ x, y, closePopup, eventId }) => {
   }
 
   return (
-    <div className="popup__content" ref={popupRef} style={popupStyle}>
-      <button
-        className="delete-event-btn"
-        onClick={onDelete}
-      >
-        <span className="delete-event-btn__icon">
-          <i className="fas fa-trash"></i>
-        </span>
-        <span className="delete-event-btn__text">
-          Delete
-        </span>
-      </button>
+    <div className="popup overlay">
+      <div className="popup__content" ref={popupRef} style={popupStyle}>
+        <button
+          className="delete-event-btn"
+          onClick={onDelete}
+        >
+          <span className="delete-event-btn__icon">
+            <i className="fas fa-trash"></i>
+          </span>
+          <span className="delete-event-btn__text">
+            Delete
+          </span>
+        </button>
+      </div>
     </div>
   );
 };
@@ -41,7 +45,6 @@ const Popup = ({ x, y, closePopup, eventId }) => {
 Popup.propTypes = {
   x: propTypes.number,
   y: propTypes.number,
-  closePopup: propTypes.func,
   eventId: propTypes.string
 }
 
