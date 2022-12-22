@@ -11,9 +11,9 @@ The tech stack is:
 3. JS
 4. mockApi
 5. fetch
-5. Sass (Scss) 
-6. BEM methodology
-7. React, hooks
-8. props-types
+6. Sass (Scss) 
+7. BEM methodology
+8. React, hooks
+9. props-types
 
 Author Vladyslav Soltanovskyi
