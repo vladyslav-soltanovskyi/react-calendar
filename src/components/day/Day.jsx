@@ -4,7 +4,7 @@ import Hour from '../hour/Hour';
 
 import './day.scss';
 
-const Day = ({ dataDay, dayEvents }) => {
+const Day = ({ dataDay, dayEvents, dateDay }) => {
   const hours = Array(24)
     .fill()
     .map((val, index) => index);
@@ -18,7 +18,7 @@ const Day = ({ dataDay, dayEvents }) => {
         );
 
         return (
-          <Hour key={dataDay + hour} dataHour={hour} hourEvents={hourEvents} />
+          <Hour key={dataDay + hour} dataHour={hour} dateDay={dateDay} hourEvents={hourEvents} />
         );
       })}
     </div>
@@ -28,6 +28,7 @@ const Day = ({ dataDay, dayEvents }) => {
 
 Day.propTypes = {
   dataDay: propTypes.number,
+  dateDay: propTypes.instanceOf(Date),
   dayEvents: propTypes.arrayOf(
     propTypes.shape({
       id: propTypes.string,

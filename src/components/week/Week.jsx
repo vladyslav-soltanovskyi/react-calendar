@@ -22,6 +22,7 @@ const Week = ({ weekDates, events }) => {
             key={dayStart.getDate()}
             dataDay={dayStart.getDate()}
             dayEvents={dayEvents}
+            dateDay={dayStart}
           />
         );
       })}

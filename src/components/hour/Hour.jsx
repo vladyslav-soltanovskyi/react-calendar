@@ -2,10 +2,12 @@ import React from 'react';
 import propTypes from "prop-types";
 import Event from '../event/Event';
 import { formatMins } from '../../utils/dateUtils.js';
+import TimeLine from '../time-line/TimeLine';
 
-const Hour = ({ dataHour, hourEvents }) => {
+const Hour = ({ dataHour, hourEvents, dateDay }) => {
   return (
     <div className="calendar__time-slot" data-time={dataHour + 1}>
+      <TimeLine dataHour={dataHour} dateDay={dateDay} />
       {/* if no events in the current hour nothing will render here */}
       {hourEvents.map(({ id, start, end, title }) => {
         const startDate = new Date(start);
@@ -35,6 +37,7 @@ const Hour = ({ dataHour, hourEvents }) => {
 
 Hour.propTypes = {
   dataHour: propTypes.number,
+  dateDay: propTypes.instanceOf(Date),
   hourEvents: propTypes.arrayOf(
     propTypes.shape({
       id: propTypes.string,

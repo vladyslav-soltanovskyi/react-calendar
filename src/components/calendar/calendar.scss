@@ -31,12 +31,14 @@
   }
 
   &__day {
+    position: relative;
     flex: 1;
     border-left: 1px solid #eee;
   }
 
   &__time-slot {
-    height: 59px;
+    position: relative;
+    height: 60px;
     border-bottom: 1px solid #eee;
   }
 
@@ -83,7 +85,7 @@
   }
 }
 
-.red-line {
+.time-line {
   position: absolute;
   width: 100%;
   border-top: 2px solid red;
