@@ -28,7 +28,7 @@ const Event = ({ height, marginTop, title, time, id }) => {
         <div className="event__title">{title}</div>
         <div className="event__time">{time}</div>
       </div>
-      {isOpen && <Popup {...coordinates} closePopup={closePopup} id={id} />}
+      {isOpen && <Popup {...coordinates} closePopup={closePopup} eventId={id} />}
     </>
   );
 };

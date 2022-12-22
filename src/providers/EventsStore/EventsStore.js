@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 export const EventsStoreContext = createContext({
   addEvent: (newEvent) => {},
-  removeEvent: (eventId) => {}, 
+  deleteEvent: (eventId) => {}, 
   updateEvent: (eventId, updatedEvent) => {},
   setEvents: (events) => {},
   dispatch: (action) => {},

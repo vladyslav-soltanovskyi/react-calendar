@@ -12,7 +12,7 @@ const actions = {
 
 export const addEvent = (newEvent) => ({ type: actions.ADD_EVENT, payload: { newEvent } });
 
-export const removeEvent = (eventId) =>  ({ type: actions.DELETE_EVENT, payload: { eventId } });
+export const deleteEvent = (eventId) =>  ({ type: actions.DELETE_EVENT, payload: { eventId } });
 
 export const updateEvent = (eventId, updatedEvent) => ({ type: actions.UPDATE_EVENT, payload: { eventId, updatedEvent } });
 
@@ -48,7 +48,7 @@ export const EventsStoreProvider = ({ children }) => {
     events: events,
     dispatch,
     addEvent,
-    removeEvent,
+    deleteEvent,
     updateEvent,
     setEvents
   };

@@ -1,19 +1,32 @@
 import React, { useRef } from 'react';
 import propTypes from "prop-types";
-import { useClickOutside } from '../../hooks';
+import { useClickOutside, useEventsStore } from '../../hooks';
+import api from "../../gateway/events";
 
-const Popup = ({ x, y, closePopup }) => {
+const Popup = ({ x, y, closePopup, eventId }) => {
   const popupRef = useRef(null);
+  const { dispatch, deleteEvent } = useEventsStore();
   const popupStyle = {
     left: `${x}px`,
     top: `${y}px`
   };
 
-  useClickOutside(popupRef, closePopup)
+  useClickOutside(popupRef, closePopup);
+
+  const onDelete = () => {
+    api.deleteEvent(eventId)
+      .then(() => {
+        closePopup();
+        dispatch(deleteEvent(eventId));
+      });
+  }
 
   return (
     <div className="popup__content" ref={popupRef} style={popupStyle}>
-      <button className="delete-event-btn">
+      <button
+        className="delete-event-btn"
+        onClick={onDelete}
+      >
         <span className="delete-event-btn__icon">
           <i className="fas fa-trash"></i>
         </span>
@@ -29,7 +42,7 @@ Popup.propTypes = {
   x: propTypes.number,
   y: propTypes.number,
   closePopup: propTypes.func,
-  id: propTypes.string
+  eventId: propTypes.string
 }
 
 export default Popup;
