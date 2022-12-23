@@ -1,44 +1,32 @@
 import React, { useEffect, useRef, useState } from 'react';
 import propTypes from "prop-types";
-import { getDateObj } from "../../utils/dateUtils";
+import { checkIsToday, getDateObj } from "../../utils/date";
 
 const minute = 1000 * 60;
 
 const TimeLine = ({ dataHour, dateDay }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const { hours, minutes, seconds } = getDateObj(currentDate);
+  const isCurrentHour = dataHour === hours;
   
-  const currentDateObj = getDateObj(currentDate);
-  const dateDayObj = getDateObj(dateDay);
-  
-  const isCurrentYear = dateDayObj.year === currentDateObj.year;
-  const isCurrentMonth = dateDayObj.month === currentDateObj.month;
-  const isCurrentDay = dateDayObj.day === currentDateObj.day;
-  const isCurrentHour = dataHour === currentDateObj.hours;
-  
-  if (!(isCurrentYear && isCurrentMonth && isCurrentDay && isCurrentHour)) {
+  if (!(checkIsToday(dateDay) && isCurrentHour)) {
     return null;
   }
  
   const timerId = useRef(null);
-  const timeLineStyles = { top: `${currentDateObj.minutes}px` };
+  const timeLineStyles = { top: `${minutes}px` };
   
   const tick = () => setCurrentDate(new Date());
   
   const startTimer = () => {
-    const delayForNextRender = minute - (currentDateObj.seconds * 1000);
+    const delayForNextRender = minute - (seconds * 1000);
 
-    timerId.current = setTimeout(() => {
-      clearTimeout(timerId.current);
-      tick();
-    }, delayForNextRender);
+    timerId.current = setTimeout(tick, delayForNextRender);
   }
-
 
   useEffect(() => {
     startTimer();
-    return () => {
-      clearTimeout(timerId.current);
-    }
+    return () => clearTimeout(timerId.current)
   }, [currentDate]);
 
   return (

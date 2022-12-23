@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useClickOutside, useEventsStore, useModal } from '../../hooks';
-import { getDateTime } from '../../utils/dateUtils';
+import { getDateTime } from '../../utils/date';
 import api from "../../gateway/events";
 
 import './modal.scss';

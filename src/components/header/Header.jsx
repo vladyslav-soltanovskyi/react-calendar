@@ -1,16 +1,16 @@
 import React from 'react';
 import propTypes from "prop-types";
 import { useModal } from '../../hooks';
-import { getDisplayedMonth, changeDayForDate } from '../../utils/dateUtils';
+import { getDisplayedMonth, changeDaysForDate } from '../../utils/date';
 
 import './header.scss';
 
 const Header = ({ weekStartDate, setWeekStartDate }) => {
   const { openModal } = useModal();
   
-  const changeToPrevWeek = () => setWeekStartDate(changeDayForDate(weekStartDate, -7));
+  const changeToPrevWeek = () => setWeekStartDate(changeDaysForDate(weekStartDate, -7));
 
-  const changeToNextWeek = () => setWeekStartDate(changeDayForDate(weekStartDate, 7));
+  const changeToNextWeek = () => setWeekStartDate(changeDaysForDate(weekStartDate, 7));
 
   const changeToCurrentWeek = () => setWeekStartDate(new Date());
 

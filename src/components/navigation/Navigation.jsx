@@ -2,22 +2,17 @@ import React from 'react';
 import propTypes from "prop-types";
 import cn from "classnames";
 
-import { days, getDateObj } from '../../utils/dateUtils.js';
+import { days, getDateObj, checkIsToday, checkIsPast } from '../../utils/date';
 
 const Navigation = ({ weekDates }) => {
-  const currentDate = new Date();
-  const currentDateObj = getDateObj(currentDate);
   return (
     <header className="calendar__header">
       {weekDates.map((dayDate) => {
-        const dayDateObj = getDateObj(dayDate);
-        const uniqKey = `${dayDateObj.year}-${dayDateObj.month}-${dayDateObj.day}`;
+        const { day, year, month, dayOfWeek } = getDateObj(dayDate);
+        const uniqKey = `${year}-${month}-${day}`;
         
-        const isCurrentYear = dayDateObj.year === currentDateObj.year;
-        const isCurrentMonth = dayDateObj.month === currentDateObj.month;
-        const isCurrentDay = dayDateObj.day === currentDateObj.day;
-        const isCurrentDate = isCurrentYear && isCurrentMonth && isCurrentDay;
-        const isPastDay = (currentDate.getTime() > dayDate.getTime()) && !isCurrentDate; 
+        const isPastDay = checkIsPast(dayDate);
+        const isTodayDay = checkIsToday(dayDate);
 
         return (
           <div
@@ -26,17 +21,17 @@ const Navigation = ({ weekDates }) => {
           >
             <span
               className={cn("day-label__day-name", {
-                "day-label__day-name_today": isCurrentDate
+                "day-label__day-name_today": isTodayDay
               })}
             >
-              {days[dayDate.getDay()]}</span>
+              {days[dayOfWeek]}</span>
             <span
               className={cn("day-label__day-number", {
-                "day-label__day-number_today": isCurrentDate,
+                "day-label__day-number_today": isTodayDay,
                 "day-label__day-number_past": isPastDay
               })}
             >
-              {dayDateObj.day}</span>
+              {day}</span>
           </div>
         )
       })}
