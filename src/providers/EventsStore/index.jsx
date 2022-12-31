@@ -45,7 +45,7 @@ export const EventsStoreProvider = ({ children }) => {
   const [events, dispatch] = useReducer(eventsReducer, initalState);
 
   const eventsValue = {
-    events: events,
+    events,
     dispatch,
     addEvent,
     deleteEvent,
