@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from "prop-types";
 import Event from '../event/Event';
-import { formatMins } from '../../utils/dateUtils.js';
+import { formatMins } from '../../utils/date';
 import TimeLine from '../time-line/TimeLine';
 
 const Hour = ({ dataHour, hourEvents, dateDay }) => {
