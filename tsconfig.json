@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "ES2021",
+    "lib": [
+      "es2021", "esnext", "dom"
+    ],
+    "allowJs": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "gateway/*": ["./src/gateway/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "providers/*": ["./src/providers/*"],
+      "utils/*": ["./src/utils/*"],
+      "types/*": ["./src/types/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/**/*"
+  ]
+}
