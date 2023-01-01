@@ -1,4 +1,4 @@
-import React, { useEffect, FC } from 'react';
+import React, { FC } from 'react';
 import Navigation from '../navigation/Navigation';
 import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
@@ -11,10 +11,7 @@ interface CalendarProps {
 }
 
 const Calendar: FC<CalendarProps> = ({ weekDates }) => {
-  const { events, fetchEvents } = useEventsStore();
-  useEffect(() => {
-    fetchEvents()
-  }, []);
+  const { events } = useEventsStore();
 
   return (
     <section className="calendar">

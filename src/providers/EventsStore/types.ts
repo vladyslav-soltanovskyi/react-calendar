@@ -1,42 +1,28 @@
 import { IEvent, TPartialEvent } from "types/event"
+import { allActions } from "./actions";
 
-export enum ACTIONS {
-  ADD_EVENT = "ADD_EVENT",
-  DELETE_EVENT = "DELETE_EVENT",
-  UPDATE_EVENT = "UPDATE_EVENT",
-  SET_EVENTS = "SET_EVENTS"
+export const enum ACTIONS {
+  addEvent = "addEvent",
+  deleteEvent = "deleteEvent",
+  updateEvent = "updateEvent",
+  setEvents = "setEvents"
 }
 
-export type ActionDeleteEvent = {
-  type: ACTIONS.DELETE_EVENT;
-  payload: {
-    eventId: string;
-  };
+type ActionsMap = typeof allActions;
+
+export type TypedActions = {
+  [Key in keyof ActionsMap]: (...p: Parameters<ActionsMap[Key]>) => {
+    type: typeof ACTIONS[Key];
+    payload: ReturnType<ActionsMap[Key]>['payload'];
+  }
 };
 
-export type ActionAddEvent = {
-  type: ACTIONS.ADD_EVENT;
-  payload: {
-    newEvent: IEvent;
-  };
-};
-
-export type ActionSetEvents = {
-  type: ACTIONS.SET_EVENTS;
-  payload: {
-    events: IEvent[];
-  };
-};
-
-export type ActionUpdateEvent = {
-  type: ACTIONS.UPDATE_EVENT;
-  payload: {
-    eventId: string;
-    updatedEvent: IEvent;
-  };
-};
-
-export type AllActions = ActionDeleteEvent | ActionAddEvent | ActionSetEvents | ActionUpdateEvent;
+export type Actions = {
+  [Key in keyof ActionsMap]: {
+    type: typeof ACTIONS[Key];
+    payload: ReturnType<ActionsMap[Key]>['payload'];
+  }
+}[keyof ActionsMap];
 
 export interface IEventsStoreContextProps {
   events: IEvent[];
