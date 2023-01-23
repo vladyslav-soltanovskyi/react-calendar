@@ -105,7 +105,7 @@ const ModalFormEvent: FC<IModalFormEventProps> = ({
       title: data.title,
       description: data.description,
       start: data.startDate.toString(),
-      end: data.startDate.toString(),
+      end: data.endDate.toString(),
       type: data.isLongEvent ? 'long-event' : 'event',
       color: data.color
     };
