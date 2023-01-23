@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
-import { IOptionsPopup } from 'providers/PopupProvider/types';
+import { IPopupOptions } from './types';
 
-export const openPopup = createAction<IOptionsPopup>('popups/IOptionsPopup');
+export const openPopup = createAction<IPopupOptions>('popups/IOptionsPopup');
 
 export const closePopup = createAction('popups/closePopup');
