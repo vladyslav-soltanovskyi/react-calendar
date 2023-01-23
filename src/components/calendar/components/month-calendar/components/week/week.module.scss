@@ -1,0 +1,6 @@
+.calendar__week {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  height: 100%;
+}

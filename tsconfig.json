@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "ES2021",
+    "lib": [
+      "es2021", "esnext", "dom"
+    ],
+    "allowJs": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "gateway/*": ["./src/gateway/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "providers/*": ["./src/providers/*"],
+      "utils/*": ["./src/utils/*"],
+      "types/*": ["./src/types/*"],
+      "store/*": ["./src/store/*"],
+      "validation-schemas/*": ["./src/validation-schemas/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/**/*"
+  ]
+}

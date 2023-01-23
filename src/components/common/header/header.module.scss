@@ -1,0 +1,112 @@
+.header {
+  display: flex;
+  height: 60px;
+  padding: 0 48px;
+  align-items: center;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.11);
+  position: relative;
+
+  @media screen and (max-width: 720px) {
+    padding: 0px 15px;
+  }
+}
+
+.create__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  left: 5px;
+  cursor: pointer;
+  top: calc(100% + 15px);
+  background-color: rgba(255, 255, 255, 0.502);
+  box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+
+  &:hover {
+    transition: border 280ms cubic-bezier(.4, 0, .2, 1), box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    box-shadow: 0px 4px 4px 0px rgba(60, 64, 67, 0.3), 0px 8px 12px 6px rgba(60, 64, 67, 0.15);
+    background-color: #f6fafe;
+  }
+
+  &:active {
+    background-color: rgb(227, 227, 227);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+    pointer-events: none;
+  }
+  
+  @media screen and (max-width: 720px) {
+    &__icon {
+      margin-right: 0;
+    }
+  }
+
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    font-size: 15px;
+    margin-left: 10px;
+    background-color: #fff;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 400px) {
+      margin-left: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    
+    &:hover {
+      background-color: darken(#fff, 4%);
+    }
+    
+    &:active {
+      background-color: #dadce0;
+    }
+  }
+
+  &__body {
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 400px) {
+      margin-left: 10px;
+    }
+  }
+  
+  &__icons {
+    display: flex;
+  }
+
+  &__date {
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 14px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.day {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #dadce0;
+  border-bottom: 1px solid #dadce0;
+  height: 100%;
+
+  &:nth-of-type(7n+1) {
+    border-left: 1px solid #dadce0;
+  }
+
+  &__label {
+    margin-top: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    text-align: center;
+    width: max-content;
+    min-width: 24px;
+    color: #3c4043;
+    line-height: 24px;
+    border-radius: 50%;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#fff, 4%);
+    }
+
+    &_additional {
+      color: #959ba1;
+    }
+    
+    &_active {
+      color: #fff;
+      background-color: #1a73e8;
+
+      &:hover {
+        background-color: darken(#1a73e8, 4%);
+      }
+    }
+  }
+
+  &__events {
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    // white-space: nowrap;
+    width: 100%;
+    position: relative;
+    margin-top: 7px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &:hover::-webkit-scrollbar {
+      width: 8px;
+    }
+  }
+
+  &__more__btn {
+    font-size: 12px;
+    height: 22px;
+    padding: 0 8px;
+    line-height: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    color: rgb(60,64,67);
+    background-color: inherit;
+    margin-bottom: 3px;
+    cursor: pointer;
+    text-align: start;
+    width: 98%;
+    outline: none;
+    border: none;
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+
+    &:hover {
+      background-color: whitesmoke;
+    }
+  }
+}

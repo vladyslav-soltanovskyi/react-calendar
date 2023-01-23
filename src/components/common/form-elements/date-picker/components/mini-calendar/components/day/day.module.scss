@@ -1,0 +1,36 @@
+.day {
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  padding: 5.5px 0px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: darken(#fff, 4%);
+  }
+
+  &_additional {
+    padding: 5.5px;
+    font-weight: 300;
+    cursor: pointer;
+    color: var(--color-placeholder);
+  }
+
+  &_selected {
+    color: var(--secondary);
+    background-color: #aecbfa;
+    
+    &:hover {
+      background-color: #aecbfa;
+    }
+  }
+  
+  &_today {
+    color: white;
+    background-color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary);
+    }
+  }
+}

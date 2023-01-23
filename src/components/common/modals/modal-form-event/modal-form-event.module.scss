@@ -1,0 +1,114 @@
+.modal {
+  position: fixed;
+  background: #fff;
+  padding: 20px 15px 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  cursor: auto;
+  box-shadow: 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%), 0px 11px 15px -7px rgb(0 0 0 / 20%);
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+    &__close {
+      margin-left: auto;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      background: transparent;
+      font-size: 24px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    
+    &__date {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    &__time {
+      display: flex;
+    }
+  
+    &__textarea {
+      border: none;
+      outline: none;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      width: 100%;
+  
+      &:focus, &:hover {
+        background-color: #f6f6f6;
+      }
+  
+      &__container {
+        width: 100%;
+        display: flex;
+      }
+    }
+  
+    &__checkbox {
+      &__title {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      &__container {
+        margin-left: 10px;
+      }
+    }
+  
+    &__group {
+      margin-top: 20px;
+    }
+    
+    &__title {
+      color: #3c4043;
+      font-size: 22px;
+      border-bottom: 1px solid rgb(218,220,224);
+    }
+    
+    &__error {
+      color: red;
+      font-size: 12px;
+      
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  
+    &__btn {
+      margin: 8px;
+      margin-left: auto;
+      border: none;
+      color: #fff;
+      border: none;
+      background-color: #3e7bea;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      
+      &:disabled {
+        background-color: cornflowerblue;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+

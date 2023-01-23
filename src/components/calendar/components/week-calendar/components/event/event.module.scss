@@ -1,0 +1,25 @@
+.event {
+  position: absolute;
+  width: 90%;
+  background-color: cornflowerblue;
+  z-index: 1;
+  border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 12px;
+  letter-spacing: .1px;
+  line-height: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &__title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 8px;
+  }
+}
+

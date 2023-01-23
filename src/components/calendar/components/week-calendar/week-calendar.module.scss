@@ -1,0 +1,13 @@
+.calendar {
+  &__week__container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+  }
+
+  &__week__header__container {
+    padding-left: calc(48px + 8px);
+    box-shadow:  0px 4px 9px -7px rgb(0 0 0 / 20%);
+    border-bottom: 1px solid #eee;
+  }
+}

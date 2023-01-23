@@ -1,0 +1,16 @@
+.day {
+  position: relative;
+  flex: 1;
+  border-left: 1px solid #d8d8d8;
+
+  &:first-child > div::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    position: absolute;
+    background-color: #d8d8d8;
+    left: -8px;
+    width: 8px;
+    top: -1px;
+  }
+}

@@ -1,0 +1,27 @@
+.week__names {
+  height: 20px;
+  font-weight: 600;
+  font-size: 8px;
+  text-align: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px 1px;
+
+  & > div {
+    width: 23px;
+  }
+}
+
+.days {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--color-text);
+  text-align: center;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+}

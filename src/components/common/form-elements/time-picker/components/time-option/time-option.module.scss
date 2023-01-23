@@ -1,0 +1,11 @@
+.option {
+  min-width: 150px;
+  width: 100%;
+  padding: 0 15px;
+  line-height: 40px;
+  font-size: 12px;
+
+  &[aria-selected=true] {
+    background-color: rgb(241,243,244);
+  }
+}

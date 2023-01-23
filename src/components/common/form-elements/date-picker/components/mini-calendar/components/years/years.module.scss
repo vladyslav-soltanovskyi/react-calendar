@@ -1,0 +1,21 @@
+.years__container {
+  font-weight: 400;
+  color: var(--color-text);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1px 1px;
+  font-size: 12px;
+}
+
+.year_additional {
+  padding: 5.5px;
+  font-weight: 300;
+  cursor: pointer;
+  color: var(--color-placeholder);
+  
+  &:hover {
+    background-color: darken(#fff, 4%);
+  }
+}

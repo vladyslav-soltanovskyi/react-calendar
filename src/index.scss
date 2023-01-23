@@ -3,5 +3,15 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+:root {
+  /* colors */
+  --color-text: #434141;
+  --primary: #1a73e8;
+  --secondary: rgb(24,90,188);
+  --secondary-7: rgba(24,90,188, 0.7);
+  --color-placeholder: rgba(0, 0, 0, 0.5);
+  --background-color-calendar-header: #ffffff;
 }

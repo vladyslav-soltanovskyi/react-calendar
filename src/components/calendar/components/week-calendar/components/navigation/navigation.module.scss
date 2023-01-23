@@ -1,0 +1,52 @@
+.week__header {
+  display: flex;
+  padding-right: 10px;
+}
+
+.day__label {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+  cursor: pointer;
+
+  &__name {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #70757a;
+    
+    &_today {
+      color: #1a73e8;
+    }
+  }
+
+  &__number {
+    font-size: 22px;
+    border-radius: 100%;
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3c4043;
+
+    @media screen and (max-width: 400px) {
+      height: 30px;
+      width: 30px;
+    }
+
+    &_past {
+      color: #8d9399;
+    }
+    
+    &_today {
+      background-color: #1a73e8;
+      color: #fff;
+    }
+  }
+}

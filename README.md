@@ -14,6 +14,6 @@ The tech stack is:
 6. Sass (Scss) 
 7. BEM methodology
 8. React, hooks
-9. props-types
+9. Typescript
 
 Author Vladyslav Soltanovskyi

@@ -1,0 +1,63 @@
+.text__field {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-size: 14px;
+  padding: 5px;
+  
+  &_full {
+    width: 100%;
+  }
+
+  &_error {
+    background-color: #fff2f2 !important;
+  }
+
+  &__error__text {
+    color: red;
+    padding: 0 9px;
+    font-size: 12px;
+    
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  
+  &__container {
+    &_full {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  &__input {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+.bottom__line {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #1a73e8;
+  bottom: 0;
+  left: 50%;
+
+  .text__field:focus ~ & {
+    animation: 0.3s progress forwards;
+  }
+}
+
+@keyframes progress {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
+}
