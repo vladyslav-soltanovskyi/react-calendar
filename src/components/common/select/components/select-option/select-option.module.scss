@@ -1,0 +1,31 @@
+.option {
+  padding-right: 8px;
+  padding-left: 16px;
+  list-style: none;
+  margin-bottom: 0.1em;
+  display: flex;
+  line-height: 36px;
+  height: 36px;
+  color: #222;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#fff, 4%);
+  }
+  
+  &:active {
+    background-color: #dadce0;
+  }
+
+  &__name {
+    flex-grow: 1;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__symbol {
+    text-transform: uppercase;
+    padding: 0 6px 0 1em;
+  }
+}

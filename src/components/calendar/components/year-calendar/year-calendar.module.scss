@@ -1,0 +1,29 @@
+.calendar__year__container {
+  width: 100%;
+  display: grid;
+  height: fit-content;
+  gap: 1.25rem;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-right: 32px;
+  padding-top: 8px;
+  padding-left: 80px;
+  padding-bottom: 32px;
+
+  @media screen and (max-width: 1140px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: 860px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: 450px) {
+    padding-left: 32px;
+  }
+}

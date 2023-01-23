@@ -1,0 +1,10 @@
+.monthes__container {
+  font-weight: 400;
+  color: var(--color-text);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1px 1px;
+  font-size: 12px;
+}

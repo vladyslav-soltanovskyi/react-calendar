@@ -1,28 +1,14 @@
-import React, { FC, useState } from "react";
-import { PopupContext } from "./PopupContext";
-import Popup from "components/popup/Popup";
-import { IOptionsPopup, IPopupContextProps } from "./types";
+import React, { FC } from "react";
+import Popup from "components/common/popup/Popup";
+import { usePopup } from "hooks/index";
 
 export const PopupProvider: FC = ({ children }) => {
-  const [optionsPopup, setOptionsPopup] = useState<IOptionsPopup>({ x: 0, y: 0, eventId: '0' });
-  const [popupOpened, setPopupOpened] = useState(false);
-
-  const openPopup = (options: IOptionsPopup) => {
-    setOptionsPopup(options);
-    setPopupOpened(true);
-  }
-
-  const closePopup = () => setPopupOpened(false);
-
-  const valuePopupProvider: IPopupContextProps = {
-    openPopup,
-    closePopup,
-  };
+  const { popupOptions, isOpenPopup } = usePopup();
 
   return (
-    <PopupContext.Provider value={valuePopupProvider}>
-      {popupOpened && <Popup {...optionsPopup} />}
+    <>
+      {isOpenPopup && <Popup {...popupOptions} />}
       {children}
-    </PopupContext.Provider>
+    </>
   );
 };

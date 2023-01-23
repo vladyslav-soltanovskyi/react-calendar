@@ -1,23 +1,16 @@
+import { createDate } from "./createDate";
 import { getWeekStartDate } from "./getWeekStartDate";
-import { months } from "./months";
 
-export const getDisplayedMonth = (date: Date) => {
-  const currentDate = new Date(date);
-  const weekStart = getWeekStartDate(date);
-  const weekEnd = new Date(
-    new Date(currentDate).setDate(currentDate.getDate() + 6)
-  );
-  const startMonth = weekStart.getMonth();
-  const startYear = weekStart.getFullYear();
-  const endMonth = weekEnd.getMonth();
-  const endYear = weekEnd.getFullYear();
-  const isSameMonth = startMonth === endMonth;
+export const getDisplayedMonth = (date: Date, locale: string = 'default') => {
+  const weekStart = createDate({ date: getWeekStartDate(date), locale });
+  const weekEnd = createDate({ date: new Date(weekStart.year, weekStart.monthIndex, weekStart.dayNumber + 6), locale });
+
+  const isSameMonth = weekStart.monthIndex === weekEnd.monthIndex;
   if (isSameMonth) {
-    return `${months[startMonth]} ${startYear}`;
+    return `${weekStart.month} ${weekStart.year}`;
   }
-  const isSameYear = startYear === endYear;
+  const isSameYear = weekStart.year === weekEnd.year;
   return isSameYear
-    ? `${months[startMonth]} - ${months[endMonth]} ${startYear}`
-    : `${months[startMonth]} ${startYear} - ${months[endMonth]} ${endYear}`;
+    ? `${weekStart.monthShort} - ${weekEnd.monthShort} ${weekStart.year}`
+    : `${weekStart.monthShort} ${weekStart.year} - ${weekEnd.monthShort} ${weekEnd.year}`;
 };
-

@@ -1,0 +1,56 @@
+.month {
+  width: 256px;
+  flex-basis: 25%;
+  min-height: 252px;
+
+  @media screen and (max-width: 1500px) {
+    width: 208px;
+  }
+
+  &__title {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    margin-right: 3px;
+
+    &__name {
+      flex-grow: 1;
+      padding-left: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .25px;
+      line-height: 20px;
+      color: rgb(60,64,67);
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    text-align: center;
+    height: 28px;
+    
+    &__day {
+      font-size: 12px;
+      font-weight: 400;
+      color: #70757a;
+      display: inline-block;
+      line-height: 28px;
+      text-align: center;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}

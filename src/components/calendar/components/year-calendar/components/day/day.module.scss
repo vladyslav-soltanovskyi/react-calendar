@@ -1,0 +1,47 @@
+.day {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  &__label {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    text-align: center;
+    width: max-content;
+    min-width: 24px;
+    color: #3c4043;
+    line-height: 24px;
+    border-radius: 50%;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#fff, 4%);
+    }
+
+    &_additional {
+      color: #959ba1;
+    }
+
+    &_selected {
+      color: var(--secondary);
+      background-color: #aecbfa;
+      
+      &:hover {
+        background-color: #aecbfa;
+      }
+    }
+    
+    &_active {
+      color: #fff;
+      background-color: #1a73e8;
+
+      &:hover {
+        background-color: darken(#1a73e8, 4%);
+      }
+    }
+  }
+}

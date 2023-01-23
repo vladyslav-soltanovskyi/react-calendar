@@ -1,0 +1,9 @@
+.date__input {
+  font-size: 14px;
+  flex: 1;
+  padding: 5px;
+  
+  &:focus, &:hover {
+    background-color: #f6f6f6;
+  }
+}

@@ -1,31 +1,22 @@
 .button {
-  height: 40px;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid #ccc;
   outline: none;
   cursor: pointer;
-  font-size: 16px;
   font-weight: 500;
-}
-
-.icon-button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background: transparent;
-}
-
-.modal {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__content {
-    background: #fff;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  font-size: .875rem;
+  padding: 0 12px;
+  color: rgb(60,64,67);
+  background-color: #fff;
+  letter-spacing: .0107142857em;
+  height: 36px;
+  
+  &:hover {
+    background-color: darken(#fff, 4%);
+  }
+  
+  &:active {
+    background-color: #dadce0;
   }
 }
 
@@ -35,21 +26,30 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #cccccc45;
+  background-color: rgb(251 251 251 / 27%);
   z-index: 10;
-}
-
-.popup {
-  &__content {
-    z-index: 10;
-    position: absolute;
-    background: #fff;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
+  cursor: pointer;
 }
 
 .hidden {
   display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+ 
+::-webkit-scrollbar-thumb {
+  border: none;
+  box-shadow: none;
+  background: #cbcccf;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(130, 130, 130); 
 }

@@ -1,0 +1,30 @@
+.month {
+  padding: 9px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: darken(#fff, 4%);
+  }
+
+  &_selected {
+    color: var(--secondary);
+    background-color: #aecbfa;
+    
+    &:hover {
+      background-color: #aecbfa;
+    }
+  }
+  
+  &_today {
+    color: white;
+    background-color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary);
+    }
+  }
+}

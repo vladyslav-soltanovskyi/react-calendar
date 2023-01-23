@@ -22,17 +22,26 @@ module.exports = (env, argv) => {
           }
         },
         {
-          test: /.s?css$/,
+          test: /\.s?css$/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            'css-loader',
-            'sass-loader',
-          ],
-        },
+            {
+              loader: 'css-loader',
+              options: {
+                modules: {
+                  auto: true
+                }
+              }
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ]
+        }
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx',  '.tsx', '.ts'],
+      extensions: ['.js', '.jsx', '.tsx', '.ts', '.scss'],
       alias: {
         'components': path.resolve(__dirname, '.', 'src', 'components'),
         'gateway': path.resolve(__dirname, '.', 'src', 'gateway'),
@@ -40,6 +49,8 @@ module.exports = (env, argv) => {
         'providers': path.resolve(__dirname, '.', 'src', 'providers'),
         'utils': path.resolve(__dirname, '.', 'src', 'utils'),
         'types': path.resolve(__dirname, '.', 'src', 'types'),
+        'store': path.resolve(__dirname, '.', 'src', 'store'),
+        'validation-schemas': path.resolve(__dirname, '.', 'src', 'validation-schemas'),
       },
     },
     plugins: [

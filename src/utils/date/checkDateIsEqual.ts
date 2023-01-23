@@ -1,12 +1,9 @@
-import { getDateObj } from "./getDateObj";
+import { createDate } from "./createDate";
 
-export const checkDateIsEqual = (date1: Date | string, date2: Date | string) => {
-  const dateObj1 = getDateObj(date1);
-  const dateObj2 = getDateObj(date2);
-
-  const isCurrentYear = dateObj1.year === dateObj2.year;
-  const isCurrentMonth = dateObj1.month === dateObj2.month;
-  const isCurrentDay = dateObj1.day === dateObj2.day;
+export const checkDateIsEqual = (date1: Date, date2: Date) => {
+  const isCurrentYear = date1.getFullYear() === date2.getFullYear();
+  const isCurrentMonth = date1.getMonth() === date2.getMonth();
+  const isCurrentDay = date1.getDate() === date2.getDate();
 
   return isCurrentYear && isCurrentMonth && isCurrentDay;
 }

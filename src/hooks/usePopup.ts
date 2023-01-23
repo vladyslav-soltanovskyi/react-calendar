@@ -1,6 +1,13 @@
-import { useContext } from "react";
-import { PopupContext } from "../providers/PopupProvider/PopupContext";
+import { useTypedSelector } from "./useTypedSelector";
+import { useActions } from "./useActions";
 
-export function usePopup() {
-  return useContext(PopupContext);
+export const usePopup = () => {
+  const popusData = useTypedSelector(({ popups }) => popups);
+  const { openPopup, closePopup } = useActions();
+
+  return {
+    ...popusData,
+    openPopup,
+    closePopup
+  }
 }

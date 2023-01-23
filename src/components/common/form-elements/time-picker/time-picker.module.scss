@@ -1,0 +1,45 @@
+.time__picker {
+  position: relative;
+  width: 50px;
+
+  &__options__container {
+    position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    left: 0;
+    box-shadow: 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%), 0px 2px 4px -1px rgb(0 0 0 / 20%);
+    z-index: 100;
+    background-color: #fff;
+  }
+
+  &__options {
+    max-height: 200px;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar {
+      border: none;
+      box-shadow: none;
+      border-radius: 8px;
+      min-height: 40px;
+      height: 8px;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      min-height: 40px;
+      background: #dadce0;
+
+      &:hover {
+        background: #bdc1c6;
+      }
+
+      &:active {
+        background: #a9acaf;
+      }
+    }
+  }
+}

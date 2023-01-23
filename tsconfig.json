@@ -17,10 +17,13 @@
       "hooks/*": ["./src/hooks/*"],
       "providers/*": ["./src/providers/*"],
       "utils/*": ["./src/utils/*"],
-      "types/*": ["./src/types/*"]
+      "types/*": ["./src/types/*"],
+      "store/*": ["./src/store/*"],
+      "validation-schemas/*": ["./src/validation-schemas/*"]
     },
     "allowSyntheticDefaultImports": true,
-    "keyofStringsOnly": true
+    "keyofStringsOnly": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
     "./src/**/*"

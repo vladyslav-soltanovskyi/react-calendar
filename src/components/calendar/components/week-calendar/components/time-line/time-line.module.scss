@@ -1,0 +1,19 @@
+.time__line {
+  position: absolute;
+  width: 100%;
+  border-top: 2px solid #ea4335;
+  z-index: 1;
+
+  &::before {
+    background: #ea4335;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}

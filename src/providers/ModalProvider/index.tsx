@@ -1,24 +1,29 @@
-import React, { FC, useState } from "react";
-import { ModalContext } from "./ModalContext";
-import Modal from "components/modal/Modal";
-import { IModalContextProps } from "./types";
+import React, { FC } from "react";
+import { useModal } from "hooks/useModal";
+import { ModalCreateEvent, ModalDayInfo, ModalEditEvent } from "components/common/modals";
 
 export const ModalProvider: FC = ({ children }) => {
-  const [modalOpened, setModalOpened] = useState(false);
-
-  const openModal = () => setModalOpened(true);
-
-  const closeModal = () => setModalOpened(false);
-
-  const valueModalProvider: IModalContextProps = {
-    openModal,
-    closeModal,
-  };
+  const {
+    isOpenModalCreateEvent,
+    isOpenModalEditEvent,
+    isOpenModalDayInfoEvents,
+    selectedDate,
+    modalEditEventOptions,
+    modalCreateEventOptions
+  } = useModal();
 
   return (
-    <ModalContext.Provider value={valueModalProvider}>
-      {modalOpened && <Modal />}
+    <>
+      {isOpenModalCreateEvent && (
+        <ModalCreateEvent {...modalCreateEventOptions} />
+      )}
+      {isOpenModalEditEvent && (
+        <ModalEditEvent {...modalEditEventOptions} />
+      )}
+      {isOpenModalDayInfoEvents && (
+        <ModalDayInfo selectedDate={selectedDate} />
+      )}
       {children}
-    </ModalContext.Provider>
+    </>
   );
 };

@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './App';
 import { ModalProvider } from './providers/ModalProvider';
-import { EventsStoreProvider } from './providers/EventsStore';
 import { PopupProvider } from './providers/PopupProvider';
+import { Provider as StoreProvider } from 'react-redux';
+import { store } from 'store/store';
+
+import './index.scss';
 
 const rootElement = document.querySelector('#root');
 
 ReactDOM.render(
-  <EventsStoreProvider>
+  <StoreProvider store={store}>
     <ModalProvider>
       <PopupProvider>
         <App />
       </PopupProvider>
     </ModalProvider>
-  </EventsStoreProvider>, rootElement);
+  </StoreProvider>, rootElement);

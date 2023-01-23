@@ -6,30 +6,24 @@ export enum METHODS {
   PATCH = 'PATCH',
 }
 
-interface BaseRequestOptions {
+interface BaseRequestOptions<Met> {
   url: string;
+  method: Met;
 }
 
-interface GetRequestOptions extends BaseRequestOptions {
-  method: METHODS.GET;
-}
+type GetRequestOptions = BaseRequestOptions<METHODS.GET>;
 
-interface PostRequestOptions extends BaseRequestOptions {
-  method: METHODS.POST;
+type DeleteRequestOptions = BaseRequestOptions<METHODS.DELETE>;
+
+interface PostRequestOptions extends BaseRequestOptions<METHODS.POST> {
   body?: Object;
 }
 
-interface DeleteRequestOptions extends BaseRequestOptions {
-  method: METHODS.DELETE;
-}
-
-interface PutRequestOptions extends BaseRequestOptions {
-  method: METHODS.PUT;
+interface PutRequestOptions extends BaseRequestOptions<METHODS.PUT> {
   body?: Object;
 }
 
-interface PatchRequestOptions extends BaseRequestOptions {
-  method: METHODS.PATCH;
+interface PatchRequestOptions extends BaseRequestOptions<METHODS.PATCH> {
   body?: Object;
 }
 

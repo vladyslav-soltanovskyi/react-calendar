@@ -1,11 +1,12 @@
 export const getWeekStartDate = (date: Date) => {
-  const dateCopy = new Date(date);
-  const dayOfWeek = dateCopy.getDay();
+  const year = date.getFullYear();
+  const monthIndex = date.getMonth();
+  const dayNumber = date.getDate();
+  const dayNumberInWeek = date.getDay();
+  
   const difference =
-    dayOfWeek === 0
+    dayNumberInWeek === 0
       ? -6 // for Sunday
-      : 1 - dayOfWeek;
-
-  const monday = new Date(dateCopy.setDate(date.getDate() + difference));
-  return new Date(monday.getFullYear(), monday.getMonth(), monday.getDate());
+      : 1 - dayNumberInWeek;
+  return new Date(year, monthIndex, dayNumber + difference);
 };

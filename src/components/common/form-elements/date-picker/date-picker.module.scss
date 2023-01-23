@@ -1,0 +1,17 @@
+.date__picker {
+  &__container {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+  }
+  
+  &__calendar {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 10px;
+    z-index: 100;
+    height: fit-content;
+    width: max-content;
+  }
+}
