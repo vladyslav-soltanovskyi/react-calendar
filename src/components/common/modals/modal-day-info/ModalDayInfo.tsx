@@ -37,7 +37,7 @@ const ModalDayInfo: FC<IModalDayInfoProps> = ({
   const modalContentStyle = { height: modalContentHeight > 0 ? modalContentHeight : 'auto' };
 
   const handleCloseModal = () => closeModalDayInfo();
-  console.log(dayEvents.length);
+  
   useClickOutside(modalRef, handleCloseModal);
 
   return (
