@@ -211,7 +211,7 @@ const ModalFormEvent: FC<IModalFormEventProps> = ({
               className={styles.modal__form__btn}
               disabled={submitting || !isValid}
             >
-              {submitting ? textSendButton : textSendingBtn}
+              {submitting ? textSendingBtn : textSendButton}
             </button>
           </form>
         </div>
