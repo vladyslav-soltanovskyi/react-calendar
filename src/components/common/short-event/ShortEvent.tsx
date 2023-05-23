@@ -42,7 +42,7 @@ const ShortEvent: FC<IShortEventProps> = ({
         className={styles.event__circle}
         style={eventCircleStyle}
       />
-      <div className={styles.event__time}>{timeStart}</div>
+      <div className={styles.event__time}>{timeStart},</div>
       <div className={styles.event__title}>{event.title}</div>
     </div>
   );
