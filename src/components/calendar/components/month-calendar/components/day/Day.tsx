@@ -17,7 +17,10 @@ interface IDayProps {
   dayShortEvents: IEvent[];
   dayLongEvents: IEvent[];
   dayEventsPositionY: string[];
+  weekEventsPositionY: string[][];
+  weekShortEvents: IEvent[][];
   countRows: number;
+  dayOfWeek: number;
 }
 
 const Day: FC<IDayProps> = ({
@@ -27,15 +30,28 @@ const Day: FC<IDayProps> = ({
   dayShortEvents,
   dayLongEvents,
   dayEventsPositionY,
-  countRows
+  weekEventsPositionY,
+  weekShortEvents,
+  countRows,
+  dayOfWeek
 }) => {
   const { openModalCreate, openModalDayInfo } = useModal();
-
+  
   const maxCountEventsInDay = countRows === 6 ? 3 : 4;
 
-  const countShortEvents = maxCountEventsInDay - dayEventsPositionY.length;
+  const restWeekEventsPositionY = weekEventsPositionY.slice(dayOfWeek + 1);
 
-  const isShowMoreBtn = maxCountEventsInDay < dayEventsPositionY.length + dayShortEvents.length;
+  const isShowMoreBtn = restWeekEventsPositionY.some((eventsPositionY, indx) => {
+    const idsEventsOutBounds = dayEventsPositionY.slice(maxCountEventsInDay - 1);
+    const isIdsEventsContaintsInDay = idsEventsOutBounds.some((idEvent) => eventsPositionY.includes(idEvent));
+    
+    const dayShortEvents = weekShortEvents[dayOfWeek + indx + 1];
+    const countEventsInDay = dayShortEvents.length + eventsPositionY.length;
+    
+    return isIdsEventsContaintsInDay && (maxCountEventsInDay < countEventsInDay);
+  })
+
+  const countShortEvents = maxCountEventsInDay - dayEventsPositionY.length;
 
   const maxCountLongEvents = isShowMoreBtn ? maxCountEventsInDay - 1 : maxCountEventsInDay;
 

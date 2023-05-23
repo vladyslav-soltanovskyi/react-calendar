@@ -23,6 +23,7 @@ const Week: FC<IWeekProps> = ({
   countRows
 }) => {
   const { sortedWeekEvents } = getSortedWeekEvents(weekDays, longEvents);
+  const { sortedWeekEvents: weekShortEvents } = getSortedWeekEvents(weekDays, shortEvents);
 
   const weekEventsPositionY = getPositionYForWeekEvents(sortedWeekEvents);
   return (
@@ -45,8 +46,11 @@ const Week: FC<IWeekProps> = ({
             dayShortEvents={sortedDayShortEvents}
             dayLongEvents={sortedWeekEvents[indx]}
             dayEventsPositionY={weekEventsPositionY[indx]}
+            weekEventsPositionY={weekEventsPositionY}
+            weekShortEvents={weekShortEvents}
             countRows={countRows}
             weekDays={weekDays}
+            dayOfWeek={indx}
           />
         );
       })}
